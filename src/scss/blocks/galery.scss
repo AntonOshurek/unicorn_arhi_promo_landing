@@ -8,5 +8,10 @@
 }
 
 .galery__item {
-
+	width: 100%;
+	height: min-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: flex-start;
 }
