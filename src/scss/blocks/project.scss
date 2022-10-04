@@ -4,10 +4,6 @@
 	height: min-content;
 	position: relative;
 
-	// &--main {
-	// 	height: 400px;
-	// }
-
 	&--inner {
 		padding: 70px;
 
@@ -20,14 +16,14 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
-		padding: 0 20px;
+		padding: 20px 20px;
 
 
 		@media (max-width: 900px) {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(3, min-content);
 			grid-row-gap: 10px;
-			padding: 0 10px;
+			padding: 10px 10px;
 		}
 	}
 }
@@ -37,11 +33,13 @@
 	color: var(--standart-text-color);
 	font-size: var(--project-text-size);
 	font-weight: 500;
+	line-height: 18px;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 15px;
 
 	&--eng {
 		font-size: var(--project-eng-text-size);
@@ -56,6 +54,12 @@
 		bottom: 20px;
 		color: var(--light-text-color);
 		font-weight: bold;
+		align-items: flex-start;
+
+		& > .project__text--eng {
+			color: var(--light-text-color);
+			opacity: 0.9;
+		}
 	}
 
 	&--inner {
@@ -85,6 +89,10 @@
 		grid-row-end: 3;
 		height: 100%;
 		object-fit: cover;
+	}
+
+	&--double-mini {
+		padding: 40px 0px 0px 10px;
 	}
 }
 
