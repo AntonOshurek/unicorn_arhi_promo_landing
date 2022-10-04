@@ -124,7 +124,7 @@ const resources = () => {
 }
 
 const images = () => {
-  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`])
+  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg,webp}`])
     .pipe(gulpif(isProd, image([
       image.mozjpeg({
         quality: 80,
@@ -134,18 +134,6 @@ const images = () => {
         optimizationLevel: 2
       }),
     ])))
-    .pipe(dest(paths.buildImgFolder))
-};
-
-const webpImages = () => {
-  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
-    .pipe(webp())
-    .pipe(dest(paths.buildImgFolder))
-};
-
-const avifImages = () => {
-  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
-    .pipe(avif())
     .pipe(dest(paths.buildImgFolder))
 };
 
@@ -174,9 +162,7 @@ const watchFiles = () => {
   watch(`${paths.srcPartialsFolder}/*.html`, htmlInclude);
   watch(`${srcFolder}/*.html`, htmlInclude);
   watch(`${paths.resourcesFolder}/**`, resources);
-  watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`, images);
-  watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, webpImages);
-  watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, avifImages);
+  watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg,webp}`, images);
 }
 
 const cache = () => {
@@ -230,9 +216,9 @@ const toProd = (done) => {
   done();
 };
 
-exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, watchFiles);
+exports.default = series(clean, htmlInclude, scripts, styles, resources, images, watchFiles);
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, htmlMinify);
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, htmlMinify);
 
 exports.cache = series(cache, rewrite);
 
