@@ -1,5 +1,5 @@
-@import "vars";
-
-.body {
-	background-color: var(--light-color);
-}
+@import "./global/vars.scss";
+@import './global/body.scss';
+@import './global/footer.scss';
+@import './global/header.scss';
+@import './global/main.scss';
