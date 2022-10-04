@@ -1,0 +1,27 @@
+:root {
+  // fonts
+	--basic-font-family: 'Roboto', 'Arial', sans-serif;
+
+	//wdith
+	--mobile-width: 600px;
+	--tablet-width: 900px;
+	--desctope-width: 1200px;
+
+	//paddings
+	--standart-side-padding: 20px;
+	--mobile-side-padding: 10px;
+
+  // colors
+  --light-color: #ffffff;
+	--standart-background-color: #ffffff;
+	--standart-text-color: #000000;
+	--text-gray-color: #808080;
+
+	//font sizes
+	--title-font-size: 17px;
+	--mobile--title-font-size: 16px;
+	--standart-text-font-size: 16px;
+	--mobile-text-font-size: 15px;
+	--eng-text-font-size: 15px;
+	--mobile-eng-font-size: 14px;
+}
