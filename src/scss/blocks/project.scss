@@ -8,7 +8,7 @@
 		padding: 70px;
 
 		@media (max-width: 900px) {
-			padding: 30px 10px;
+			padding: 30px 20px;
 		}
 	}
 
@@ -16,14 +16,14 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
-		padding: 20px 0px;
+		padding: 20px 10px;
 
 
 		@media (max-width: 900px) {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(3, min-content);
-			grid-row-gap: 10px;
-			padding: 10px 0px;
+			grid-row-gap: 5px;
+			padding: 20px;
 		}
 	}
 }
@@ -41,11 +41,20 @@
 	align-items: center;
 	gap: 15px;
 
+	@media (max-width: 900px) {
+		font-size: var(--project-text-mobile-size);
+		line-height: 12px;
+	}
+
 	&--eng {
 		font-size: var(--project-eng-text-size);
 		font-weight: normal;
 		font-style: italic;
 		color: var(--text-gray-color);
+
+		@media (max-width: 900px) {
+			font-size: var(--project-text-mobile-size);
+		}
 	}
 
 	&--main {
@@ -60,6 +69,18 @@
 		& > .project__text--eng {
 			color: var(--light-text-color);
 			opacity: 0.9;
+		}
+
+		@media (max-width: 900px) {
+			padding-right: 10px;
+		}
+
+		&-double {
+			bottom: 30px;
+			@media (max-width: 900px) {
+				top: 60px;
+				left: 30px;
+			}
 		}
 	}
 
@@ -76,6 +97,10 @@
 		width: 100%;
 		height: 100%;
 		padding: 10px 10px 0 30px;
+
+		@media (max-width: 900px) {
+			padding: 10px;
+		}
 	}
 }
 
@@ -94,6 +119,10 @@
 
 	&--double-mini {
 		padding: 40px 0px 0px 10px;
+
+		@media (max-width: 900px) {
+			padding: 0px 10px;
+		}
 	}
 }
 
