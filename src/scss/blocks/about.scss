@@ -1,0 +1,32 @@
+.about {
+	width: 100%;
+	height: 100%;
+}
+
+.about__info {
+	width: 100%;
+	min-height: 100vh;
+}
+
+.about__portfolio-date {
+	width: 100%;
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.about__date {
+	font-family: var(--basic-font-family);
+	font-size: 19px;
+	font-weight: 500;
+	line-height: 16px;
+
+	&--eng {
+		font-size: 16px;
+		font-weight: 400;
+		font-style: italic;
+	}
+}

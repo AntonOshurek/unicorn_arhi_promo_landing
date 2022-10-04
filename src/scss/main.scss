@@ -1,6 +1,11 @@
 @import "./global/vars.scss";
+
+//global
 @import './global/body.scss';
 @import './global/footer.scss';
 @import './global/header.scss';
 @import './global/main.scss';
 @import './global/global.scss';
+
+//blocks
+@import './blocks/about.scss';

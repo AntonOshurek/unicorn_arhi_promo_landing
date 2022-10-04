@@ -1,12 +1,15 @@
 :root {
-  // base
-  --font-family: "Open Sans", sans-serif;
+  // fonts
 	--basic-font-family: 'Roboto', 'Arial', sans-serif;
 
 	//wdith
 	--mobile-width: 600px;
 	--tablet-width: 900px;
 	--desctope-width: 1200px;
+
+	//paddings
+	--standart-side-padding: 20px;
+	--mobile-side-padding: 10px;
 
   // colors
   --light-color: #ffffff;
