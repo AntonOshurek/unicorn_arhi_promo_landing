@@ -74,6 +74,14 @@
 		@media (max-width: 900px) {
 			padding-right: 10px;
 		}
+
+		&-double {
+			bottom: 30px;
+			@media (max-width: 900px) {
+				top: 60px;
+				left: 30px;
+			}
+		}
 	}
 
 	&--inner {
