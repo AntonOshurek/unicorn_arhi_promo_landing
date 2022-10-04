@@ -5,6 +5,12 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+
+	padding: 0 var(--standart-side-padding) 100px var(--standart-side-padding);
+
+	@media (max-width: 900px) {
+		padding: 0px var(--mobile-side-padding) 100px var(--mobile-side-padding);
+	}
 }
 
 .about__info {
