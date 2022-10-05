@@ -157,6 +157,7 @@ const watchFiles = () => {
   watch(`${srcFolder}/*.html`, htmlInclude);
   watch(`${paths.resourcesFolder}/**`, resources);
   watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg,webp}`, images);
+	watch(`${srcFolder}/**.{ico}`, copy);
 }
 
 const cache = () => {
@@ -221,7 +222,7 @@ const copy = (done) => {
   done();
 }
 
-exports.default = series(clean, htmlInclude, scripts, styles, resources, images, watchFiles, copy);
+exports.default = series(clean, copy, htmlInclude, scripts, styles, resources, images, watchFiles);
 
 exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, htmlMinify, copy);
 
