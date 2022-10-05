@@ -210,9 +210,20 @@ const toProd = (done) => {
   done();
 };
 
-exports.default = series(clean, htmlInclude, scripts, styles, resources, images, watchFiles);
+// Copy
+const copy = (done) => {
+  src([
+    "src/*.ico",
+  ], {
+    base: "src"
+  })
+    .pipe(dest("app"))
+  done();
+}
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, htmlMinify);
+exports.default = series(clean, htmlInclude, scripts, styles, resources, images, watchFiles, copy);
+
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, htmlMinify, copy);
 
 exports.cache = series(cache, rewrite);
 
