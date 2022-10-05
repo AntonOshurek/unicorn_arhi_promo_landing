@@ -157,6 +157,7 @@ const watchFiles = () => {
   watch(`${srcFolder}/*.html`, htmlInclude);
   watch(`${paths.resourcesFolder}/**`, resources);
   watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg,webp}`, images);
+	watch(`${srcFolder}/**.{ico}`, copy);
 }
 
 const cache = () => {
@@ -210,9 +211,20 @@ const toProd = (done) => {
   done();
 };
 
-exports.default = series(clean, htmlInclude, scripts, styles, resources, images, watchFiles);
+// Copy
+const copy = (done) => {
+  src([
+    "src/*.ico",
+  ], {
+    base: "src"
+  })
+    .pipe(dest("app"))
+  done();
+}
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, htmlMinify);
+exports.default = series(clean, copy, htmlInclude, scripts, styles, resources, images, watchFiles);
+
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, htmlMinify, copy);
 
 exports.cache = series(cache, rewrite);
 
